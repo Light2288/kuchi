@@ -4,13 +4,13 @@ import SwiftUI
 struct KuchiApp: App {
   var body: some Scene {
     WindowGroup {
-      EmptyView()
+        RegisterView()
     }
   }
 }
 
 struct KuchiApp_Previews: PreviewProvider {
   static var previews: some View {
-    EmptyView()
+      RegisterView()
   }
 }
