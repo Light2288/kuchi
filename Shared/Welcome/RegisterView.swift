@@ -14,7 +14,9 @@ struct RegisterView: View {
             
             WelcomeMessageView()
             TextField("Type your name...", text: $userManager.profile.name)
+                .focused($nameFieldFocused)
                 .submitLabel(.done)
+                .onSubmit(registerUser)
                 .bordered()
             
             HStack {
@@ -26,6 +28,17 @@ struct RegisterView: View {
                         userManager.isUserNameValid() ? .green : .red
                     )
                     .padding(.trailing)
+            }
+            
+            HStack {
+                Spacer()
+                
+                Toggle(isOn: $userManager.settings.rememberUser) {
+                    Text("Remember me")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                .fixedSize()
             }
             
             Button(action: registerUser) {
@@ -51,7 +64,16 @@ struct RegisterView: View {
 // MARK: - Event Handlers
 extension RegisterView {
     func registerUser() {
-        userManager.persistProfile()
+        nameFieldFocused = false
+        
+        if userManager.settings.rememberUser {
+            userManager.persistProfile()
+        } else {
+            userManager.clear()
+        }
+        
+        userManager.persistSettings()
+        userManager.setRegistered()
     }
 }
 
