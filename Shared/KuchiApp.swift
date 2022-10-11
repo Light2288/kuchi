@@ -10,14 +10,15 @@ struct KuchiApp: App {
     
   var body: some Scene {
     WindowGroup {
-        RegisterView()
+        StarterView()
             .environmentObject(userManager)
+            .environmentObject(ChallengesViewModel())
     }
   }
 }
 
 struct KuchiApp_Previews: PreviewProvider {
   static var previews: some View {
-      RegisterView()
+      StarterView()
   }
 }

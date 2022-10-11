@@ -1,27 +1,26 @@
 import SwiftUI
 
-
 struct RegisterView: View {
     // MARK: - Properties
     @EnvironmentObject var userManager: UserManager
-    
+
     @FocusState var nameFieldFocused: Bool
-    
+
     // MARK: - Body
     var body: some View {
         VStack {
             Spacer()
-            
+
             WelcomeMessageView()
             TextField("Type your name...", text: $userManager.profile.name)
                 .focused($nameFieldFocused)
                 .submitLabel(.done)
                 .onSubmit(registerUser)
                 .bordered()
-            
+
             HStack {
                 Spacer()
-                
+
                 Text("\(userManager.profile.name.count)")
                     .font(.caption)
                     .foregroundColor(
@@ -29,10 +28,10 @@ struct RegisterView: View {
                     )
                     .padding(.trailing)
             }
-            
+
             HStack {
                 Spacer()
-                
+
                 Toggle(isOn: $userManager.settings.rememberUser) {
                     Text("Remember me")
                         .font(.subheadline)
@@ -40,7 +39,7 @@ struct RegisterView: View {
                 }
                 .fixedSize()
             }
-            
+
             Button(action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark")
@@ -53,7 +52,7 @@ struct RegisterView: View {
             }
             .bordered()
             .disabled(!userManager.isUserNameValid())
-            
+
             Spacer()
         }
         .padding()
@@ -65,13 +64,13 @@ struct RegisterView: View {
 extension RegisterView {
     func registerUser() {
         nameFieldFocused = false
-        
+
         if userManager.settings.rememberUser {
             userManager.persistProfile()
         } else {
             userManager.clear()
         }
-        
+
         userManager.persistSettings()
         userManager.setRegistered()
     }
@@ -80,7 +79,7 @@ extension RegisterView {
 // MARK: - Preview
 struct RegisterView_Previews: PreviewProvider {
     static let user = UserManager(name: "Ray")
-    
+
     static var previews: some View {
         RegisterView()
             .environmentObject(user)

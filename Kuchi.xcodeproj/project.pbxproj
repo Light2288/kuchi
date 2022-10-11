@@ -55,6 +55,8 @@
 		6BD10F9F28F02F150020B69D /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD10F9C28F02F150020B69D /* HistoryView.swift */; };
 		6BD10FA028F02F150020B69D /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD10F9D28F02F150020B69D /* StarterView.swift */; };
 		6BD10FA128F02F150020B69D /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD10F9D28F02F150020B69D /* StarterView.swift */; };
+		6BD10FA328F4BC960020B69D /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD10FA228F4BC960020B69D /* ScoreView.swift */; };
+		6BD10FA428F4BC960020B69D /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD10FA228F4BC960020B69D /* ScoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,7 @@
 		6BD10F8D28F02F040020B69D /* CongratulationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 		6BD10F9C28F02F150020B69D /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		6BD10F9D28F02F150020B69D /* StarterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
+		6BD10FA228F4BC960020B69D /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +221,7 @@
 				6BD10F8D28F02F040020B69D /* CongratulationsView.swift */,
 				6BD10F8A28F02F040020B69D /* PracticeView.swift */,
 				6BD10F8C28F02F040020B69D /* QuestionView.swift */,
+				6BD10FA228F4BC960020B69D /* ScoreView.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -330,6 +334,7 @@
 				6B0E86AF28E655F800A160EC /* Profile.swift in Sources */,
 				6BD10F9628F02F040020B69D /* ChoicesRow.swift in Sources */,
 				6BD10F9228F02F040020B69D /* ChoicesView.swift in Sources */,
+				6BD10FA328F4BC960020B69D /* ScoreView.swift in Sources */,
 				6B0E86A128E3A54500A160EC /* WelcomeView.swift in Sources */,
 				6B0E86BB28E6575D00A160EC /* WelcomeMessageView.swift in Sources */,
 				6B0E86A428E5F13C00A160EC /* HorizontallyAlignedLabelStyle.swift in Sources */,
@@ -358,6 +363,7 @@
 				6B0E86B028E655F800A160EC /* Profile.swift in Sources */,
 				6BD10F9728F02F040020B69D /* ChoicesRow.swift in Sources */,
 				6BD10F9328F02F040020B69D /* ChoicesView.swift in Sources */,
+				6BD10FA428F4BC960020B69D /* ScoreView.swift in Sources */,
 				6B0E86A228E3A54500A160EC /* WelcomeView.swift in Sources */,
 				6B0E86BC28E6575D00A160EC /* WelcomeMessageView.swift in Sources */,
 				6B0E86A528E5F13C00A160EC /* HorizontallyAlignedLabelStyle.swift in Sources */,
