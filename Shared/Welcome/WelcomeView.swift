@@ -3,18 +3,13 @@ import SwiftUI
 struct WelcomeView: View {
     // MARK: - Properties
     @EnvironmentObject var userManager: UserManager
-    @EnvironmentObject var challengeViewModel: ChallengesViewModel
     @State var showPractice = false
     
     // MARK: - Body
     @ViewBuilder
     var body: some View {
         if showPractice {
-            PracticeView(
-                challengeTest: $challengeViewModel.currentChallenge,
-                userName: $userManager.profile.name,
-                numberOfAnswered: .constant(challengeViewModel.numberOfAnswered))
-            .environment(\.questionsPerSession, challengeViewModel.numberOfQuestions)
+            HomeView()
         } else {
             ZStack {
                 WelcomeBackgroundImage()

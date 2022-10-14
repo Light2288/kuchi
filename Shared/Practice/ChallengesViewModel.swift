@@ -47,6 +47,7 @@ class ChallengesViewModel: ObservableObject {
     Challenge(question: "ごめんなさい", pronunciation: "Gomennasai", answer: "Sorry")
   ]
     
+    @AppStorage("numberOfQuestions")
     private(set) var numberOfQuestions = 6
   
   var allAnswers: [String] { return Self.challenges.map { $0.answer }}
