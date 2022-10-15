@@ -5,7 +5,7 @@ struct ChallengeView: View {
     @State var showAnswers = false
     @Binding var numberOfAnswered: Int
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    @Environment(\.questionsPerSession) var questionsPerSession
+    @AppStorage("numberOfQuestions") var numberOfQuestions = 6
     
     @ViewBuilder
     var body: some View {
@@ -22,7 +22,7 @@ struct ChallengeView: View {
                         ChoicesView(challengeTest: challengeTest)
                     }
                 }
-                ScoreView(numberOfQuestions: questionsPerSession, numberOfAnswered: $numberOfAnswered)
+                ScoreView(numberOfQuestions: $numberOfQuestions, numberOfAnswered: $numberOfAnswered)
             }
         } else {
             VStack {
@@ -32,7 +32,7 @@ struct ChallengeView: View {
                     QuestionView(question: challengeTest.challenge.question)
                         .frame(height: 300)
                 }
-                ScoreView(numberOfQuestions: questionsPerSession, numberOfAnswered: $numberOfAnswered)
+                ScoreView(numberOfQuestions: $numberOfQuestions, numberOfAnswered: $numberOfAnswered)
                 if(showAnswers) {
                     Divider()
                     ChoicesView(challengeTest: challengeTest)

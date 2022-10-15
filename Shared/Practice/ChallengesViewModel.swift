@@ -39,7 +39,7 @@ class ChallengesViewModel: ObservableObject {
     Challenge(question: "はい", pronunciation: "Hai", answer: "Yes"),
     Challenge(question: "いいえ", pronunciation: "iie", answer: "No"),
     Challenge(question: "おねがい　します", pronunciation: "Onegai shimasu", answer: "Please"),
-    Challenge(question: "こんにちわ", pronunciation: "Konnichiwa", answer: "Hello"),
+    Challenge(question: "", pronunciation: "Konnichiwa", answer: "Hello"),
     Challenge(question: "はじめまして", pronunciation: "Hajimemashite", answer: "Nice to meet you"),
     Challenge(question: "もしもし", pronunciation: "Moshi moshi", answer: "Hello"),
     Challenge(question: "すみません", pronunciation: "Sumimasen", answer: "Excuse me"),
