@@ -3,11 +3,12 @@ import SwiftUI
 struct SettingsView: View {
     // MARK: - Properties
     @AppStorage("numberOfQuestions") var numberOfQuestions = 6
-    @State var learningEnabled: Bool = true
+    @AppStorage("learningEnabled") var learningEnabled: Bool = true
     @AppStorage("dailyReminderEnabled") var dailyReminderEnabled = false
     @State var dailyReminderTime = Date(timeIntervalSince1970: 0)
     @AppStorage("dailyReminderTime") var dailyReminderTimeShadow: Double = 0
     @State var cardBackgroundColor: Color = .red
+    @AppStorage("cardBackgroundColor") var cardBackgroundColorShadow: Int = 0xFF000FF
     @AppStorage("appearance") var appearance: Appearance = .automatic
     
     // MARK: - Body
@@ -26,6 +27,12 @@ struct SettingsView: View {
                     .pickerStyle(.segmented)
                     ColorPicker(selection: $cardBackgroundColor) {
                         Text("Card background color")
+                    }
+                    .onChange(of: cardBackgroundColor, perform: { newValue in
+                        cardBackgroundColorShadow = newValue.asRgba
+                    })
+                    .onAppear {
+                        cardBackgroundColor = Color(rgba: cardBackgroundColorShadow)
                     }
                 }
             } header: {
